@@ -1,6 +1,10 @@
 import streamlit as st
-import openai
-from openai import OpenAI
+try:
+    import openai
+    from openai import OpenAI
+except ImportError:
+    st.error("OpenAI library not found. Please install it using: pip install openai")
+    st.stop()
 import json
 
 # Set page configuration
